@@ -32,7 +32,7 @@ int verify_play(Board board, int playerRow, int playerCol){
 }
 	
 	
-void get_play(Board board, int* mines_left){
+void get_play(Board board, int* mines_left, int gameOver){
 	int playerRow;
 	int playerCol;
 	int playerAction;
@@ -99,6 +99,14 @@ void get_play(Board board, int* mines_left){
 				board.tile[playerRow][playerCol].appearance = '?';
 				board.tile[playerRow][playerCol].visibility = QUESTIONED;
 			}
+			
+			if (playerAction == 0){
+				if (board.tile[playerRow][playerCol].is_mine == 1){
+					gameOver = 1;
+				}
+				
+				// if checkMine(board, playerRow, playerCol)
+			}
 		}
 	}
 
@@ -113,7 +121,7 @@ void play_game(Board board){
     while(!gameOver){
 		printf("There are %d mines left.\n", num_mines_left);
 		print_board(board);
-		get_play(board, &num_mines_left);
+		get_play(board, &num_mines_left, &gameOver);
 		//check_game_over(gameBoard, &gameOver, &gameWin);
 		
 	}
