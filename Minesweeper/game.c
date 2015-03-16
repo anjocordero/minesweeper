@@ -129,7 +129,7 @@ void game_over(Board board, int gameWin){
     print_board(board);
 
     if(gameWin == 0){
-        printf("You Lost :(\n")
+        printf("You Lost :(\n");
     }
 
     if(gameWin == 1){
@@ -150,7 +150,5 @@ void play_game(Board board){
 		get_play(board, &num_mines_left, &gameOver);
 
 	}
-
-
     game_over(board, gameWin);
 }
