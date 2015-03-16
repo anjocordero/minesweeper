@@ -26,7 +26,7 @@ Board create_board(int rows, int cols, int num_mines, int seed){
 		xCoord = rand() % (board.rows);
 		yCoord = rand() % (board.cols);
 		
-		if(board.tile[xCoord][yCoord].is_mine == 1){
+		if(board.tile[xCoord][yCoord].is_mine == 1){ //duplicate mine safeguard
 			tempXCoord = rand() % (board.rows);
 			tempYCoord = rand() % (board.cols);
 			
