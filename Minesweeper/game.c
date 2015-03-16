@@ -101,11 +101,7 @@ void get_play(Board board, int* mines_left, int* gameOver){
 			}
 
 			if (playerAction == 0){
-				if (board.tile[playerRow][playerCol].is_mine == 1){
-					*gameOver = 1;
-				}
-
-				// if checkMine(board, playerRow, playerCol)
+				checkMine(board, playerRow, playerCol, gameOver);
 			}
 		}
 	}
