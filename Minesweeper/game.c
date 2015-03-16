@@ -60,7 +60,7 @@ void get_play(Board board, int* mines_left, int gameOver){
 				}
 
 				if (playerAction == 1){
-					get_play(board, mines_left, gameOver); //FIX ME
+					get_play(board, mines_left, gameOver);
 				}
 		}
 
@@ -75,7 +75,7 @@ void get_play(Board board, int* mines_left, int gameOver){
 				}
 
 				if (playerAction == 1){
-					get_play(board, mines_left, gameOver); //FIX ME
+					get_play(board, mines_left, gameOver);
 				}
 		}
 
@@ -86,7 +86,7 @@ void get_play(Board board, int* mines_left, int gameOver){
 			scanf("%d", &playerAction);
 
 			if (playerAction == 3){
-				get_play(board, mines_left, gameOver); //FIX ME
+				get_play(board, mines_left, gameOver);
 			}
 
 			if (playerAction == 2){
@@ -105,7 +105,7 @@ void get_play(Board board, int* mines_left, int gameOver){
 					gameOver = 1;
 				}
 
-				// if checkMine(board, playerRow, playerCol)
+				//if checkMine(board, playerRow, playerCol)
 			}
 		}
 	}
@@ -113,7 +113,7 @@ void get_play(Board board, int* mines_left, int gameOver){
 }
 
 
-void game_over(Board board, int gameWin){
+void reveal_board(Board board, int gameWin){
     int i,j;
 
     for(i = 0; i < board.rows; i++){
@@ -150,5 +150,6 @@ void play_game(Board board){
 		get_play(board, &num_mines_left, &gameOver);
 
 	}
+
     game_over(board, gameWin);
 }
