@@ -60,7 +60,7 @@ void get_play(Board board, int* mines_left, int* gameOver){
 				}
 
 				if (playerAction == 1){
-					get_play(board, mines_left, gameOver); //FIX ME
+					get_play(board, mines_left, gameOver);
 				}
 		}
 
@@ -75,7 +75,7 @@ void get_play(Board board, int* mines_left, int* gameOver){
 				}
 
 				if (playerAction == 1){
-					get_play(board, mines_left, gameOver); //FIX ME
+					get_play(board, mines_left, gameOver); 
 				}
 		}
 
@@ -86,7 +86,7 @@ void get_play(Board board, int* mines_left, int* gameOver){
 			scanf("%d", &playerAction);
 
 			if (playerAction == 3){
-				get_play(board, mines_left, gameOver); //FIX ME
+				get_play(board, mines_left, gameOver);
 			}
 
 			if (playerAction == 2){
