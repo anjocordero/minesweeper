@@ -54,7 +54,6 @@ void get_play(Board board, int* mines_left, int* gameOver){
 			printf("Action: ");
 			scanf("%d", &playerAction);
 				if (playerAction == 0){
-					board.tile[playerRow][playerCol].appearance = '#';
 					board.tile[playerRow][playerCol].visibility = CONCEALED;
 					*mines_left = *mines_left + 1;
 				}
@@ -70,16 +69,11 @@ void get_play(Board board, int* mines_left, int* gameOver){
 			printf("Action: ");
 			scanf("%d", &playerAction);
 				if (playerAction == 0){
-					board.tile[playerRow][playerCol].appearance = '#';
 					board.tile[playerRow][playerCol].visibility = CONCEALED;
 				}
 
 				if (playerAction == 1){
-<<<<<<< HEAD
-					get_play(board, mines_left, gameOver);
-=======
 					get_play(board, mines_left, gameOver); 
->>>>>>> origin/master
 				}
 		}
 
@@ -94,26 +88,20 @@ void get_play(Board board, int* mines_left, int* gameOver){
 			}
 
 			if (playerAction == 2){
-				board.tile[playerRow][playerCol].appearance = '!';
 				board.tile[playerRow][playerCol].visibility = MARKED;
 				*mines_left = *mines_left - 1;
 			}
 
 			if (playerAction == 1){
-				board.tile[playerRow][playerCol].appearance = '?';
 				board.tile[playerRow][playerCol].visibility = QUESTIONED;
 			}
 
 			if (playerAction == 0){
-<<<<<<< HEAD
 				if (board.tile[playerRow][playerCol].is_mine == 1){
-					gameOver = 1;
+					*gameOver = 1;
 				}
 
-				//if checkMine(board, playerRow, playerCol)
-=======
-				checkMine(board, playerRow, playerCol, gameOver);
->>>>>>> origin/master
+				// if checkMine(board, playerRow, playerCol)
 			}
 		}
 	}
@@ -121,7 +109,7 @@ void get_play(Board board, int* mines_left, int* gameOver){
 }
 
 
-void reveal_board(Board board, int gameWin){
+void game_over(Board board, int gameWin){
     int i,j;
 
     for(i = 0; i < board.rows; i++){
@@ -158,6 +146,5 @@ void play_game(Board board){
 		get_play(board, &num_mines_left, &gameOver);
 
 	}
-
     game_over(board, gameWin);
 }

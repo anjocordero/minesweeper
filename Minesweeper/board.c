@@ -6,8 +6,6 @@ Board create_board(int rows, int cols, int num_mines, int seed){
 	int i,j;
 	int xCoord;
 	int yCoord;
-	int tempXCoord;
-	int tempYCoord;
 	Board board;
 	
 	board.rows = rows;
@@ -26,18 +24,8 @@ Board create_board(int rows, int cols, int num_mines, int seed){
 		xCoord = rand() % (board.rows);
 		yCoord = rand() % (board.cols);
 		
-		if(board.tile[xCoord][yCoord].is_mine == 1){
-			tempXCoord = rand() % (board.rows);
-			tempYCoord = rand() % (board.cols);
-			
-			printf("Placing mine at %d, %d\n", tempXCoord, tempYCoord);
-			board.tile[tempXCoord][tempYCoord].is_mine = 1;
-		}
-		
-		else{
-			printf("Placing mine at %d, %d\n", xCoord, yCoord);
-			board.tile[xCoord][yCoord].is_mine = 1;
-		}
+		printf("Placing mine at %d, %d\n", xCoord, yCoord);
+		board.tile[xCoord][yCoord].is_mine = 1;
 	}
 	
 	for (i = 0; i < board.rows; i++){
@@ -55,7 +43,24 @@ void print_board(Board board){
 	
 	for (i = (board.rows - 1); i >= 0; i--){
         for (j = 0; j < board.cols; j++){
+			if(board.tile[i][j].visibility == CONCEALED){
+				board.tile[i][j].appearance = '#';
+			}
+			
+			if(board.tile[i][j].visibility == MARKED){
+				board.tile[i][j].appearance = '!';
+			}
+			
+			if(board.tile[i][j].visibility == QUESTIONED){
+				board.tile[i][j].appearance = '?';
+			}
+			
+			
             if ( j == (board.cols - 1)){ 
+				if (board.tile[i][j].visibility == REVEALED){
+					printf("%d\n", board.tile[i][j].num_surrounding_mines);
+				}
+				
                 printf("%c\n", board.tile[i][j].appearance);
            }
            
@@ -63,7 +68,11 @@ void print_board(Board board){
 				if (j == 0){
 						printf("%d ", (i));
 				}
-					
+				
+				if (board.tile[i][j].visibility == REVEALED){
+					printf("%d ", board.tile[i][j].num_surrounding_mines);
+				}
+				
 				printf("%c ", board.tile[i][j].appearance);
 			}
 		}
