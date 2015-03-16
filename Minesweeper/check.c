@@ -95,4 +95,5 @@ void checkMine(Board board, int playerRow, int playerCol, int* gameOver){
 			checkMine(board, playerRow + 1, playerCol - 1, gameOver); // Up - Left
 		}
 	}
+	
 }

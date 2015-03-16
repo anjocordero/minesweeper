@@ -1,6 +1,6 @@
 all: mine_sweeper.out
 
-minesweeper.out: main.o board.o game.o check.o
+mine_sweeper.out: main.o board.o game.o check.o
 	gcc -g -Wall -o mine_sweeper.out main.o board.o game.o check.o
 	
 main.o: main.c board.h

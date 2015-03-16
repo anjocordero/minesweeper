@@ -32,7 +32,7 @@ int verify_play(Board board, int playerRow, int playerCol){
 }
 
 
-void get_play(Board board, int* mines_left, int gameOver){
+void get_play(Board board, int* mines_left, int* gameOver){
 	int playerRow;
 	int playerCol;
 	int playerAction;
@@ -75,7 +75,11 @@ void get_play(Board board, int* mines_left, int gameOver){
 				}
 
 				if (playerAction == 1){
+<<<<<<< HEAD
 					get_play(board, mines_left, gameOver);
+=======
+					get_play(board, mines_left, gameOver); 
+>>>>>>> origin/master
 				}
 		}
 
@@ -101,11 +105,15 @@ void get_play(Board board, int* mines_left, int gameOver){
 			}
 
 			if (playerAction == 0){
+<<<<<<< HEAD
 				if (board.tile[playerRow][playerCol].is_mine == 1){
 					gameOver = 1;
 				}
 
 				//if checkMine(board, playerRow, playerCol)
+=======
+				checkMine(board, playerRow, playerCol, gameOver);
+>>>>>>> origin/master
 			}
 		}
 	}
@@ -128,8 +136,8 @@ void reveal_board(Board board, int gameWin){
 
     print_board(board);
 
-    if(gameWin == 0){
-        printf("You Lost :(\n");
+	if(gameWin == 0){
+		printf("You Lost :(\n");
     }
 
     if(gameWin == 1){

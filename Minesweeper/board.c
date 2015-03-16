@@ -6,6 +6,8 @@ Board create_board(int rows, int cols, int num_mines, int seed){
 	int i,j;
 	int xCoord;
 	int yCoord;
+	int tempXCoord;
+	int tempYCoord;
 	Board board;
 	
 	board.rows = rows;
@@ -24,8 +26,18 @@ Board create_board(int rows, int cols, int num_mines, int seed){
 		xCoord = rand() % (board.rows);
 		yCoord = rand() % (board.cols);
 		
-		printf("Placing mine at %d, %d\n", xCoord, yCoord);
-		board.tile[xCoord][yCoord].is_mine = 1;
+		if(board.tile[xCoord][yCoord].is_mine == 1){
+			tempXCoord = rand() % (board.rows);
+			tempYCoord = rand() % (board.cols);
+			
+			printf("Placing mine at %d, %d\n", tempXCoord, tempYCoord);
+			board.tile[tempXCoord][tempYCoord].is_mine = 1;
+		}
+		
+		else{
+			printf("Placing mine at %d, %d\n", xCoord, yCoord);
+			board.tile[xCoord][yCoord].is_mine = 1;
+		}
 	}
 	
 	for (i = 0; i < board.rows; i++){
