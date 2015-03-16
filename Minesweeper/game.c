@@ -32,7 +32,7 @@ int verify_play(Board board, int playerRow, int playerCol){
 }
 
 
-void get_play(Board board, int* mines_left, int gameOver){
+void get_play(Board board, int* mines_left, int* gameOver){
 	int playerRow;
 	int playerCol;
 	int playerAction;
@@ -102,7 +102,7 @@ void get_play(Board board, int* mines_left, int gameOver){
 
 			if (playerAction == 0){
 				if (board.tile[playerRow][playerCol].is_mine == 1){
-					gameOver = 1;
+					*gameOver = 1;
 				}
 
 				// if checkMine(board, playerRow, playerCol)
@@ -128,8 +128,8 @@ void game_over(Board board, int gameWin){
 
     print_board(board);
 
-    if(gameWin == 0){
-        printf("You Lost :(\n");
+	if(gameWin == 0){
+		printf("You Lost :(\n");
     }
 
     if(gameWin == 1){
