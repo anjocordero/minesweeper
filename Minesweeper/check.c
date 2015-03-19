@@ -10,14 +10,16 @@ void checkMine(Board board, int playerRow, int playerCol, int* gameOver){
 		return;
 	}
 	
-	if (playerRow < board.rows){
+	board.tile[playerRow][playerCol].num_surrounding_mines = 0;
+	
+	if (playerRow < board.rows - 1){
 		if (board.tile[playerRow + 1][playerCol].is_mine == 1){ // Up
 			++board.tile[playerRow][playerCol].num_surrounding_mines;
 		}
 	}
 	
-	if (playerCol < board.cols){
-		if (playerRow < board.rows){
+	if (playerCol < board.cols - 1){
+		if (playerRow < board.rows - 1){
 			if (board.tile[playerRow + 1][playerCol + 1].is_mine == 1){ // Up - Right
 				++board.tile[playerRow][playerCol].num_surrounding_mines;
 			}
@@ -51,32 +53,33 @@ void checkMine(Board board, int playerRow, int playerCol, int* gameOver){
 			++board.tile[playerRow][playerCol].num_surrounding_mines;
 		}
 		
-		if (playerRow < board.rows){
+		if (playerRow < board.rows - 1){
 			if (board.tile[playerRow + 1][playerCol - 1].is_mine == 1){ // Up - Left
 				++board.tile[playerRow][playerCol].num_surrounding_mines;
 			}
 		}
 	}
 	board.tile[playerRow][playerCol].appearance = (char)board.tile[playerRow][playerCol].num_surrounding_mines;
+	board.tile[playerRow][playerCol].visibility = REVEALED;
 	
 	if (board.tile[playerRow][playerCol].num_surrounding_mines == 0){
 		
 		board.tile[playerRow][playerCol].appearance = '0'; // Reveal blank space
+		board.tile[playerRow][playerCol].visibility = REVEALED;
 		
-		if (playerRow < board.rows){
+		if (playerRow < board.rows - 1){
 			checkMine(board, playerRow + 1, playerCol, gameOver); // Up
 		}
-	}
 	
-	if (playerCol < board.cols){
-		if (playerRow < board.rows){
+	if (playerCol < board.cols - 1){
+		if (playerRow < board.rows - 1){
 			checkMine(board, playerRow + 1, playerCol + 1, gameOver); // Up - Right
 		}
 		
 		checkMine(board, playerRow, playerCol + 1, gameOver); // Right
 		
 		if (playerRow > 0){
-			checkMine(board, playerRow, playerCol, gameOver); // Down - Right
+			checkMine(board, playerRow - 1, playerCol + 1, gameOver); // Down - Right
 		}
 	}
 	
@@ -95,5 +98,5 @@ void checkMine(Board board, int playerRow, int playerCol, int* gameOver){
 			checkMine(board, playerRow + 1, playerCol - 1, gameOver); // Up - Left
 		}
 	}
-	
+	}
 }

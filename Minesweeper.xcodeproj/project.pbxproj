@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC0B62AE1AB6A9F200FEF0C6 /* game.c in Sources */ = {isa = PBXBuildFile; fileRef = FC0B62AD1AB6A9F200FEF0C6 /* game.c */; };
 		FC9DF72C1AB578C200973784 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = FC9DF72B1AB578C200973784 /* main.c */; };
 		FC9DF7391AB57C4100973784 /* board.c in Sources */ = {isa = PBXBuildFile; fileRef = FC9DF7321AB57C4100973784 /* board.c */; };
 		FC9DF73A1AB57C4100973784 /* check.c in Sources */ = {isa = PBXBuildFile; fileRef = FC9DF7341AB57C4100973784 /* check.c */; };
-		FC9DF73B1AB57C4100973784 /* game.c in Sources */ = {isa = PBXBuildFile; fileRef = FC9DF7361AB57C4100973784 /* game.c */; };
 		FCFD1D201AB6922E00C2F3EB /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = FCFD1D1F1AB6922E00C2F3EB /* Makefile */; };
 /* End PBXBuildFile section */
 
@@ -27,15 +27,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FC0B62AD1AB6A9F200FEF0C6 /* game.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = game.c; sourceTree = "<group>"; };
 		FC9DF7281AB578C200973784 /* Minesweeper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Minesweeper; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC9DF72B1AB578C200973784 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		FC9DF7321AB57C4100973784 /* board.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = board.c; sourceTree = "<group>"; };
 		FC9DF7331AB57C4100973784 /* board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = board.h; sourceTree = "<group>"; };
 		FC9DF7341AB57C4100973784 /* check.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = check.c; sourceTree = "<group>"; };
 		FC9DF7351AB57C4100973784 /* check.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = check.h; sourceTree = "<group>"; };
-		FC9DF7361AB57C4100973784 /* game.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = game.c; sourceTree = "<group>"; };
 		FC9DF7371AB57C4100973784 /* game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
-		FCFD1D1F1AB6922E00C2F3EB /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; name = Makefile; path = Minesweeper/Makefile; sourceTree = "<group>"; };
+		FCFD1D1F1AB6922E00C2F3EB /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +52,6 @@
 		FC9DF71F1AB578C200973784 = {
 			isa = PBXGroup;
 			children = (
-				FCFD1D1F1AB6922E00C2F3EB /* Makefile */,
 				FC9DF72A1AB578C200973784 /* Minesweeper */,
 				FC9DF7291AB578C200973784 /* Products */,
 			);
@@ -73,8 +72,9 @@
 				FC9DF7331AB57C4100973784 /* board.h */,
 				FC9DF7341AB57C4100973784 /* check.c */,
 				FC9DF7351AB57C4100973784 /* check.h */,
-				FC9DF7361AB57C4100973784 /* game.c */,
 				FC9DF7371AB57C4100973784 /* game.h */,
+				FC0B62AD1AB6A9F200FEF0C6 /* game.c */,
+				FCFD1D1F1AB6922E00C2F3EB /* Makefile */,
 				FC9DF72B1AB578C200973784 /* main.c */,
 			);
 			path = Minesweeper;
@@ -136,9 +136,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC0B62AE1AB6A9F200FEF0C6 /* game.c in Sources */,
 				FCFD1D201AB6922E00C2F3EB /* Makefile in Sources */,
 				FC9DF73A1AB57C4100973784 /* check.c in Sources */,
-				FC9DF73B1AB57C4100973784 /* game.c in Sources */,
 				FC9DF7391AB57C4100973784 /* board.c in Sources */,
 				FC9DF72C1AB578C200973784 /* main.c in Sources */,
 			);
