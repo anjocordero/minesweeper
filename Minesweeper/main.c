@@ -6,14 +6,14 @@
 void check_argc(int argc){
 	
 	if (argc < 5){
-		 printf("Not enough arguments entered\n");
-		 printf("Usage minesweeper.out num_rows num_columns num_mines seed_num\n");
+		 printf("Not enough arguments. Usage:\n");
+		 printf("./minesweeper.out num_rows num_cols num_mines [seed]\n");
 		 exit(0);
 	}
 	
 	if (argc > 5){
-		 printf("Too many arguments entered\n");
-		 printf("Usage minesweeper.out num_rows num_columns num_mines seed_num\n");
+		 printf("Too many arguments. Usage:\n");
+		 printf("./minesweeper.out num_rows num_cols num_mines [seed]\n");
 		 exit(0);
 	}
 	
